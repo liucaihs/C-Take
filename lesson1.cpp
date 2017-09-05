@@ -2,6 +2,7 @@
  *  C++ 第一课!!
  *  g++ lesson1.cpp -o l1
  * */
+
 #include <iostream>
 
 // 命名空间
@@ -21,7 +22,10 @@ enum color1 {
 
 // 函数
 int func() {
+    // 数据类型
+    // http://www.runoob.com/cplusplus/cpp-data-types.html
     cout << "Size of char : " << sizeof(char) << endl;
+    cout << "Size of unsigned char : " << sizeof(unsigned char) << endl;
     cout << "Size of int : " << sizeof(int) << endl;
     cout << "Size of short int : " << sizeof(short int) << endl;
     cout << "Size of long int : " << sizeof(long int) << endl;
@@ -43,6 +47,7 @@ int main() {
     // 打印
     func();
 
-    //    cout << "Hel\?\?-  ~ /?lo, wor??ld!\n\n\n\n\n\n\n\nddd" << endl;
+    // -trigraphs
+//    cout << "Hel??-  ~ /?lo, wor??ld!\n\n\n\n\n\n\n\nddd" << endl;
     return 0;
 }
