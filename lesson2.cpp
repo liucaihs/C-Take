@@ -22,14 +22,20 @@ using namespace std;
 
 
  * */
-extern int a, b;
+// 变量声明  只在头文件中做声明比较好
+//  extern 表明该变量在别的地方已经定义过了,在这里要使用那个变量.
+extern int a, b; // extern这个关键字的加载还需探讨: 参考： http://www.cnblogs.com/yc_sunniwell/archive/2010/07/14/1777431.html
 extern int c;
 extern float f;
 extern int out;
+
+// 全局变量
 int out1 = 1;
 
 // 函数声明
 int func();
+
+int func111();
 
 int main() {
 
@@ -58,8 +64,9 @@ int main() {
     cout << "main out:" << out << endl;
 
 
-
-    // 变量定义
+    // 这里使用到全局变量
+    cout << "main extern a:" << a << endl;
+    // 变量定义  实际在这里是局部变量，而不是外面的extern变量声明
     int a, b;
     int c;
     float f;
@@ -74,6 +81,8 @@ int main() {
     f = 70.0 / 3.0;
     cout << f << endl;
 
+    func111();
+
     return 0;
 }
 
@@ -82,5 +91,16 @@ int main() {
 int func() {
     cout << "func out1:" << out1 << endl;
 //    cout << out << endl;  // 未定义，需要定义/**/
+    return 0;
+}
+
+
+// 这里进行全局变量定义
+int a = 3;
+
+// 使用extern
+int func111() {
+    extern int a;
+    cout << "fun111:" << a << endl;
     return 0;
 }
