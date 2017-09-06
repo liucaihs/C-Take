@@ -24,13 +24,16 @@ using namespace std;
  * */
 // 变量声明  只在头文件中做声明比较好
 //  extern 表明该变量在别的地方已经定义过了,在这里要使用那个变量.
+// 仅仅说有这个东西，然后会去找这个东西
 extern int a, b; // extern这个关键字的加载还需探讨: 参考： http://www.cnblogs.com/yc_sunniwell/archive/2010/07/14/1777431.html
+extern int a, b;  // 可重复声明
 extern int c;
 extern float f;
 extern int out;
 
 // 全局变量
 int out1 = 1;
+//int out1 = 2; // 却只能定义一次
 
 // 函数声明
 int func();
